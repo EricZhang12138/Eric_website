@@ -1,4 +1,5 @@
 import { useScrollRevealMultiple } from '../hooks/useScrollReveal';
+import FloatingIcons from '../components/FloatingIcons';
 import './Home.css';
 
 function Home() {
@@ -47,7 +48,8 @@ function Home() {
             </div>
           </div>
           <div className="hero-photo-wrapper">
-            <img src="/my_photo.png" alt="Eric Zhang" className="hero-photo" />
+            <FloatingIcons />
+            <img src={`${import.meta.env.BASE_URL}my_photo.png`} alt="Eric Zhang" className="hero-photo" />
           </div>
         </div>
       </section>

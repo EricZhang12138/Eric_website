@@ -1,0 +1,60 @@
+.photo-icons {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.photo-icon {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  opacity: 0.35;
+  filter: grayscale(0.3) brightness(1.3);
+  animation: icon-bob 6s ease-in-out infinite alternate;
+  transform: rotate(var(--base-rotation, 0deg));
+}
+
+@keyframes icon-bob {
+  0% {
+    transform: rotate(var(--base-rotation, 0deg)) translateY(0);
+  }
+  100% {
+    transform: rotate(var(--base-rotation, 0deg)) translateY(-10px);
+  }
+}
+
+/* Stagger for organic feel */
+.photo-icon:nth-child(2n) {
+  animation-name: icon-bob-alt;
+  animation-duration: 8s;
+}
+
+.photo-icon:nth-child(3n) {
+  animation-duration: 7s;
+}
+
+@keyframes icon-bob-alt {
+  0% {
+    transform: rotate(var(--base-rotation, 0deg)) translate(0, 0);
+  }
+  100% {
+    transform: rotate(var(--base-rotation, 0deg)) translate(6px, -8px);
+  }
+}
+
+/* Mobile: smaller, subtler */
+@media (max-width: 768px) {
+  .photo-icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.25;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .photo-icon {
+    animation: none;
+  }
+}

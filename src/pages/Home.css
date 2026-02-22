@@ -46,6 +46,7 @@
 /* ===== Photo ===== */
 
 .hero-photo-wrapper {
+  position: relative;
   flex-shrink: 0;
   width: 450px;
   align-self: flex-end;
